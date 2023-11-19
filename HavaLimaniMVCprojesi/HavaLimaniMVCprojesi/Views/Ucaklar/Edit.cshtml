@@ -1,0 +1,60 @@
+﻿@model HavaLimaniMVCprojesi.Models.Ucaklar
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div style="margin-left:500px;">
+    <h1 style="color:aqua">Uçak Güncelleme</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="UcakId" class="control-label"></label>
+                    <input asp-for="UcakId" class="form-control" />
+                    <span asp-validation-for="UcakId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UcakRengi" class="control-label"></label>
+                    <input asp-for="UcakRengi" class="form-control" />
+                    <span asp-validation-for="UcakRengi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UcakTipi" class="control-label"></label>
+                    <input asp-for="UcakTipi" class="form-control" />
+                    <span asp-validation-for="UcakTipi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="YolcuKapasitesi" class="control-label"></label>
+                    <input asp-for="YolcuKapasitesi" class="form-control" />
+                    <span asp-validation-for="YolcuKapasitesi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UcakGenislik" class="control-label"></label>
+                    <input asp-for="UcakGenislik" class="form-control" />
+                    <span asp-validation-for="UcakGenislik" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BiletFiyati" class="control-label"></label>
+                    <input asp-for="BiletFiyati" class="form-control" />
+                    <span asp-validation-for="BiletFiyati" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirmaId" class="control-label"></label>
+                    <input asp-for="FirmaId" class="form-control" />
+                    <span asp-validation-for="FirmaId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Güncelle" class="btn btn-warning" style="margin-top:10px;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Geri dön</a>
+    </div>
+
+</div>

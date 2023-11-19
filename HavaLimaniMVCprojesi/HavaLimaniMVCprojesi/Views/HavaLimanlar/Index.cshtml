@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HavaLimaniMVCprojesi.Models.HavaLimanlar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1 style="color:aqua">Havalimanı Listesi</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary" style="margin-left:20px; width:150px;">Havalimanı Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HavaLimaniId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yerleskesi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maliyeti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YolcuKapasitesi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PistSayisi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HavaLimaniId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yerleskesi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maliyeti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YolcuKapasitesi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PistSayisi)
+            </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new {  id=item.HavaLimaniId  },new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Sil", "Delete", new { id=item.HavaLimaniId  },new { @class = "btn btn-danger" })
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

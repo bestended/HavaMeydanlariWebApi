@@ -1,0 +1,70 @@
+﻿@model IEnumerable<HavaLimaniMVCprojesi.Models.Ucaklar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:aqua">Uçak Listesi</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary" style="margin-left:20px; width:150px;">Uçak Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UcakId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UcakRengi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UcakTipi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YolcuKapasitesi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UcakGenislik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BiletFiyati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirmaId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UcakId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UcakRengi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UcakTipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YolcuKapasitesi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UcakGenislik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BiletFiyati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirmaId)
+            </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new {  id=item.UcakId  },new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Sil", "Delete", new { id=item.UcakId  },new { @class = "btn btn-danger" })
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

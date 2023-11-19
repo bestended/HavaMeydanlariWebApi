@@ -1,0 +1,50 @@
+﻿@model HavaLimaniMVCprojesi.Models.HavaLimanlar
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div style="margin-left:500px;">
+    <h1 style="color:aqua">Havalimanı Güncelleme</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="HavaLimaniId" class="control-label"></label>
+                    <input asp-for="HavaLimaniId" class="form-control" />
+                    <span asp-validation-for="HavaLimaniId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Yerleskesi" class="control-label"></label>
+                    <input asp-for="Yerleskesi" class="form-control" />
+                    <span asp-validation-for="Yerleskesi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Maliyeti" class="control-label"></label>
+                    <input asp-for="Maliyeti" class="form-control" />
+                    <span asp-validation-for="Maliyeti" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="YolcuKapasitesi" class="control-label"></label>
+                    <input asp-for="YolcuKapasitesi" class="form-control" />
+                    <span asp-validation-for="YolcuKapasitesi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PistSayisi" class="control-label"></label>
+                    <input asp-for="PistSayisi" class="form-control" />
+                    <span asp-validation-for="PistSayisi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Güncelle" class="btn btn-warning" style="margin-top:10px;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Geri dön</a>
+    </div>
+
+</div>

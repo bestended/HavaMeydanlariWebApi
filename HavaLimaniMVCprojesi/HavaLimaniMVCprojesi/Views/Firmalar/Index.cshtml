@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HavaLimaniMVCprojesi.Models.Firmalar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+    <h1 style="color:aqua">Firma Listesi</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary" style="margin-left:20px; width:150px;">Firma Ekle</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirmaId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirmaAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirmaBütcesi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirmaMerkezi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirmaTelefon)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirmaId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirmaAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirmaBütcesi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirmaMerkezi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirmaTelefon)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Güncelle", "Edit", new {  id=item.FirmaId  },new { @class = "btn btn-warning" }) |
+                        @Html.ActionLink("Sil", "Delete", new { id=item.FirmaId  },new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

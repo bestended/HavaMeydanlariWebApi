@@ -1,0 +1,87 @@
+﻿@model IEnumerable<HavaLimaniMVCprojesi.Models.Personeller>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1 style="color:aqua">Personel Listesi</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary" style="margin-left:20px; width:150px;">Personel Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonelAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonelSoyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CalismaTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vardiya)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UcakId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HavaLimaniId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelSoyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalismaTarih)
+            </td>
+           
+            <td>
+                    @if (item.Vardiya == true)
+                    {
+                        <span>Gece</span>
+                    }
+                    else
+                    {
+                        <span>Gündüz</span>
+                    }
+
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UcakId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HavaLimaniId)
+            </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new {  id=item.PersonelId  },new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Sil", "Delete", new { id=item.PersonelId  },new { @class = "btn btn-danger" })
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
